@@ -11,27 +11,21 @@ public class ConsumidorCola {
         try {
             System.out.println("[P1]");
             cola.meter(10);
-        cola.meter(30);
-        cola.meter(60);
-        cola.meter(12);
-        System.out.println(cola);
-       //cola.sacar();
-        //System.out.println(cola);
-       //ola.sacar();
-        //System.out.println(cola);
-        //System.out.println(cola);
-        cola.meter(66);
-        cola.meter(98);
-        //System.out.println(cola);
-        cola.meter(74);
-       // System.out.println(cola);
-        cola.meter(37);
-        cola.meter(9);
-        System.out.println(cola);
-
+            cola.meter(30);
+            cola.meter(60);
+            cola.meter(12);
+            System.out.println(cola);
+            //cola.sacar();
+            //cola.sacar();
+            cola.meter(66);
+            cola.meter(98);
+            cola.meter(74);
+            cola.meter(37);
+            cola.meter(9);
+            System.out.println(cola);
             System.out.println(cola);
         } catch (ControlExcepciones controlExcepciones) {
-           // controlExcepciones.printStackTrace();
+            controlExcepciones.printStackTrace();
         }
         System.out.println(cola);
     }

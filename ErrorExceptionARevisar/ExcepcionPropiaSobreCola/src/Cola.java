@@ -29,35 +29,26 @@ public class Cola {
         }else if (!estaLlena()){
             tail++;
             elementosAlmacenados++;
-            elementos[tail] = nuevoElemento;;
+            // No puedes hacer esta comprobación después de insertar el elemento. Porque
+            // estarías diciendo que te parece bien usar un tail == elementos.length
             if (tail == elementos.length)
                 tail = 0;
+            elementos[tail] = nuevoElemento;;
         }
         else {
             System.out.println("tail = " + tail);
             System.out.println("head = " + head);
-           throw new ControlExcepciones("Cola se  llenó. No se pudieron seguir añadiendo elementos.") ;
-}        }
-
-
-   /* public void meter(int nuevoElemento){
-        if (estaVacia()){
-            tail = head;
-        }else if (!estaLlena()){
-            tail++;
-            elementosAlmacenados++;
-            if (tail == elementos.length)
-                tail = 0;
+            throw new ControlExcepciones("Cola se  llenó. No se pudieron seguir añadiendo elementos.") ;
         }
-        elementos[tail] = nuevoElemento;
-    }*/
+    }
+
+
     public boolean estaVacia(){
         return (tail == -1);
     }
 
     public boolean estaLlena(){
-        //return ( tail + 1 ) % elementos.length == head;
-        return true;
+        return ( tail + 1 ) % elementos.length == head;
     }
 
     private int numeroElementos(){
