@@ -2,7 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Carrito {
@@ -33,8 +35,7 @@ public class Carrito {
     BufferedReader objetoALeer=null;
     public final String SEPARADOR=";";
     String lineaActual="";
-
-
+    ArrayList<Productos> arrayProductos = new ArrayList<>();
 
     public Carrito() {
         buttComprar.addActionListener(new ActionListener() {
@@ -48,23 +49,23 @@ public class Carrito {
     
             @Override
             public void actionPerformed(ActionEvent e) {
-String campoAmostrar;
-                Set<String> campoAmostrarSet = new HashSet<>();
+                String [] campos;
                 try {
                     objetoALeer= new BufferedReader( new FileReader(listaDeProductos.getAbsolutePath()));
-                    System.out.println("\n"+listaDeProductos.getAbsolutePath());
                lineaActual= (String.valueOf(new FileReader(listaDeProductos)));
               while ((lineaActual=objetoALeer.readLine()) !=null){
+                  campos=lineaActual.split(SEPARADOR);
+                  double precio= Double.parseDouble(campos[3]);
+                  Productos productos = new Productos(campos [0], campos[1],campos[2],precio);
+
+arrayProductos.add(productos);
                   //usado ; como separador
 
-                  String [] campos = lineaActual.split(String.valueOf(listaDeProductos));
-                    campoAmostrar= campos[1];
-ComboBoxModel model = comboListaProductos.getModel();
-        int tamanno= model.getSize();
-campoAmostrarSet.add(campoAmostrar);
-comboListaProductos.addItem(campoAmostrar);
-
+for( Productos c :arrayProductos){
+    comboListaProductos.addItem(c);
 }
+}
+
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -79,6 +80,9 @@ comboListaProductos.addItem(campoAmostrar);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        System.out.println(listaDeProductos.getAbsolutePath());
+
+
     }
 
 }
