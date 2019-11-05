@@ -9,7 +9,7 @@ public class ListaInvitados {
     BufferedReader objetoALeer=null;
     String SEPARADOR=";";
     String lineaActual;
-    ArrayList<Invitados> invitadosArrayList = new ArrayList<>();
+    ArrayList<File> invitadosArrayList = new ArrayList<File>();
 
     public void LeerCsv(){
 String [] campos;
@@ -32,20 +32,22 @@ String [] campos;
             }
             campos=lineaActual.split(SEPARADOR);
             String fechNacimiento =(campos[3]);
-            Invitados invitados = new Invitados(campos[0], campos[1], campos[2], fechNacimiento);
             SimpleDateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+            Date fechaFormateada= null;
             try {
-                Date fechaFormateada= formatoFecha.parse(fechNacimiento);
-fechNacimiento= formatoFecha.format(fechaFormateada);
-
-
-                System.out.println("dd-MM-yyyy");
-                fechaFormateada= formatoFecha.format();
+                fechaFormateada = formatoFecha.parse(fechNacimiento);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+            Invitados invitados = new Invitados(campos[0], campos[1], campos[2], fechNacimiento);
 
 
+            fechNacimiento= formatoFecha.format(fechaFormateada);
+
+
+            System.out.println(invitados.toString());
+            invitadosArrayList.add(listaDeInvitados);
+            System.out.println(invitadosArrayList);
 
 
         }
