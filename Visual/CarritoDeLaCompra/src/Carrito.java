@@ -30,7 +30,6 @@ public class Carrito {
     private JLabel jLabelSumaTotal;
     private JTextField textSumaTotal;
     private JTextField textNumProducto;
-    private JTextField textField1;
     static File listaDeProductos = new File("Productos.csv");
     BufferedReader objetoALeer=null;
     public final String SEPARADOR=";";
@@ -43,36 +42,52 @@ public class Carrito {
             public void actionPerformed(ActionEvent e) {
 
 
-            }
-        });
-        comboListaProductos.addActionListener(new ActionListener() {
-    
-            @Override
-            public void actionPerformed(ActionEvent e) {
                 String [] campos;
+                comboListaProductos.addItem(new Productos("","","","", 00));
                 try {
                     objetoALeer= new BufferedReader( new FileReader(listaDeProductos.getAbsolutePath()));
-               lineaActual= (String.valueOf(new FileReader(listaDeProductos)));
-              while ((lineaActual=objetoALeer.readLine()) !=null){
-                  campos=lineaActual.split(SEPARADOR);
-                  double precio= Double.parseDouble(campos[3]);
-                  Productos productos = new Productos(campos [0], campos[1],campos[2],precio);
+                    lineaActual= (String.valueOf(new FileReader(listaDeProductos)));
+                    while ((lineaActual=objetoALeer.readLine()) !=null){
+                        campos=lineaActual.split(SEPARADOR);
+                        double precio= Double.parseDouble(campos[4].replaceAll(",", "."));
+                        Productos productos = new Productos(campos [0], campos[1],campos[2],campos[3],precio);
+                        System.out.println(productos.toString());
+                        arrayProductos.add(productos);
+                        System.out.println(arrayProductos);
 
-arrayProductos.add(productos);
-                  //usado ; como separador
+                        //usado ; como separador
 
-for( Productos c :arrayProductos){
-    comboListaProductos.addItem(c);
-}
-}
+                    }
 
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
+
+            }
+        });
+
+
+        comboListaProductos.addActionListener(new ActionListener() {
+    
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
             }
         });
     }
 
+
+    public void  CargarCsv{
+
+        for( Productos c :arrayProductos){
+            comboListaProductos.addItem(c);
+
+        }
+
+
+    }
     public static void main(String[] args) {
         JFrame frame = new JFrame("Carrito de la Compra");
         frame.setContentPane(new Carrito().panelMain);
@@ -81,7 +96,6 @@ for( Productos c :arrayProductos){
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         System.out.println(listaDeProductos.getAbsolutePath());
-
 
     }
 

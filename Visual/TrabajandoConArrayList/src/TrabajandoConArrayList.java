@@ -64,4 +64,8 @@ arrayList2.addAll(arrayList);//añade  arrayList2 el contenido de arrayList
 
 arrayList.removeIf(elemento->predicado(elemento));
         System.out.println(arrayList);
+
+ arrayList.sort((a,b)-> a.compareTo(b));
+
+
     }}
