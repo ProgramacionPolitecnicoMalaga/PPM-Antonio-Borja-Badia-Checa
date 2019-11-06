@@ -17,14 +17,23 @@ public class ApMundo {
     private JComboBox comboPaises;
     private JButton mostrarButton;
     private JPanel panelAeropuertos;
-    private JList listAeropuertos;
-private JList listaAero;
-DefaultListModel listModel = new DefaultListModel();
-
+    private JTextArea listAeropuertos;
     public File xmlAeropuertos;
     public static String xmlRuta;
     public static File archivo;
     public ArrayList<String> paises = new ArrayList<>();
+
+
+ /*  public listModel = new DefaultListModel<>();
+
+ public    list = new JList<>(listModel);
+
+        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+        list.setVisibleRowCount(-1);*/
+
+
+
     public  ApMundo() {
 
         try {
@@ -67,14 +76,12 @@ DefaultListModel listModel = new DefaultListModel();
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String paisSeleccionado= comboPaises.getToolTipText();
+                String paisSeleccionado= (String) comboPaises.getSelectedItem();
+listAeropuertos.setText(paisSeleccionado);
 
-                for (int i=0; i<paisSeleccionado.length();i++ ) {
-                    listModel.addElement(i);
-                }
-    listaAero.setModel(listModel);
+            }
 
-                  }
+
         });
     }
 
