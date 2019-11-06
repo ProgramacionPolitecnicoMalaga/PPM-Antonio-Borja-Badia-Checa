@@ -2,16 +2,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
+
 import  java.util.ArrayList;
 import javax.swing.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 import  java.util.*;
 public class ApMundo {
     private JPanel panelMain;
@@ -20,12 +18,13 @@ public class ApMundo {
     private JButton mostrarButton;
     private JPanel panelAeropuertos;
     private JList listAeropuertos;
+private JList listaAero;
+DefaultListModel listModel = new DefaultListModel();
+
     public File xmlAeropuertos;
     public static String xmlRuta;
     public static File archivo;
-    public HashMap<Object, String  > mapPaises = new HashMap<Object, String>();
     public ArrayList<String> paises = new ArrayList<>();
-
     public  ApMundo() {
 
         try {
@@ -52,37 +51,54 @@ public class ApMundo {
             }
             CargarDatos();
 
-
         } catch (Exception ex) {
             ex.printStackTrace();
 
         }
-        System.out.println(archivo);
+      //  System.out.println(archivo);
         comboPaises.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
             }
+        });
+
+        mostrarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String paisSeleccionado= comboPaises.getToolTipText();
+
+                for (int i=0; i<paisSeleccionado.length();i++ ) {
+                    listModel.addElement(i);
+                }
+    listaAero.setModel(listModel);
+
+                  }
         });
     }
 
 
-    private void CargarDatos(){
-                for ( Object o: paises ){
 
+
+    private  void CargarDatos(){
+                Set <String>hashSet = new HashSet<String>(paises);//quitamos los países repetidos del array, ya que se añaden una vez por cada aeropuerto
+                paises.clear();
+                paises.addAll(hashSet);
+
+        for ( Object o: paises ){
             comboPaises.addItem(o);
-        }
 
+        }
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ApMundo apMundo = (ApMundo) o;
         return Objects.equals(paises, apMundo.paises);
-    }
+    }*/
 
 
 
