@@ -1,26 +1,32 @@
 public class Aeropuertos {
 
-    private String pais;
+
     private String nomAeropuerto;
+private String area;
+private  String matricula;
 
-    public Aeropuertos(String pais, String nomAeropuerto) {
-        this.pais = pais;
+    public Aeropuertos( String nomAeropuerto, String area, String matricula) {
         this.nomAeropuerto = nomAeropuerto;
-    }
-
-    public String getPais() {
-        return pais;
+        this.area = area;
+        this.matricula = matricula;
     }
 
     public String getNomAeropuerto() {
         return nomAeropuerto;
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
     @Override
     public String toString() {
-        return "Aeropuertos{" +
-                "pais='" + pais + '\'' +
-                ", nomAeropuerto='" + nomAeropuerto + '\'' +
-                '}';
+        return "Nombre del Aaeropuerto: '" + nomAeropuerto + '\'' +
+                ", Area='" + area + '\'' +
+                ", Matrícula='" + matricula;
     }
 }

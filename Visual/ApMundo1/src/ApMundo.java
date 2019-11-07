@@ -16,13 +16,13 @@ public class ApMundo {
     private JPanel panelPaises;
     private JComboBox comboPaises;
     private JButton mostrarButton;
-    private JPanel panelAeropuertos;
-    private JTextArea listAeropuertos;
+    private JTextArea txtAeropuertos;
+    private JScrollPane panelAeropuertos;
     public File xmlAeropuertos;
     public static String xmlRuta;
     public static File archivo;
     public ArrayList<String> paises = new ArrayList<>();
-
+public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayList >();
 
  /*  public listModel = new DefaultListModel<>();
 
@@ -53,9 +53,19 @@ public class ApMundo {
 
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-                    System.out.println("País: " +element.getAttribute("pais"));
+                    String pais = element.getAttribute("pais");
+                    System.out.println("País: " + pais);
                     System.out.println("Nombre del Aeropuerto: " + element.getAttribute("nombreLargo"));
-                    paises.add(element.getAttribute("pais"));
+                    Aeropuertos paisesYaeropuertos = new Aeropuertos(element.getAttribute("nombreLargo"), element.getAttribute("area"), element.getAttribute("matricula"));
+                    paises.add(pais);
+                    if (infoAeropuertos.containsKey(pais)) {
+                        infoAeropuertos.get(pais).add(paisesYaeropuertos);
+                    } else {
+                        ArrayList<Object> infoDeLosAeropuertosDelPaisSeleccionado = new ArrayList<Object>();
+                        infoDeLosAeropuertosDelPaisSeleccionado.add(paisesYaeropuertos);
+                        infoAeropuertos.put(pais, infoDeLosAeropuertosDelPaisSeleccionado);
+
+                    }
                 }
             }
             CargarDatos();
@@ -76,18 +86,22 @@ public class ApMundo {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 String paisSeleccionado= (String) comboPaises.getSelectedItem();
-listAeropuertos.setText(paisSeleccionado);
+                System.out.println(paisSeleccionado);
 
+                ArrayList aeropuertosPorPaises =infoAeropuertos.get(paisSeleccionado);
+                txtAeropuertos.setText(paisSeleccionado);
+
+                for ( Object aero: aeropuertosPorPaises  ) {
+                   aero=(Aeropuertos)aero;
+
+txtAeropuertos.append(System.getProperty("line.separator"));
+txtAeropuertos.append(aero.toString());
+                }
             }
-
-
         });
     }
-
-
-
-
     private  void CargarDatos(){
                 Set <String>hashSet = new HashSet<String>(paises);//quitamos los países repetidos del array, ya que se añaden una vez por cada aeropuerto
                 paises.clear();
