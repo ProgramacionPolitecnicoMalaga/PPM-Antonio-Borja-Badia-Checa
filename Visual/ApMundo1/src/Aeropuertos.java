@@ -25,8 +25,8 @@ private  String matricula;
 
     @Override
     public String toString() {
-        return "Nombre del Aaeropuerto: '" + nomAeropuerto + '\'' +
-                ", Area='" + area + '\'' +
-                ", Matrícula='" + matricula;
+        return "Aaeropuerto=  '" + nomAeropuerto + '\'' +
+                ",      [Area]=  '" + area + '\'' +
+                ",      [Matrícula]=  '" + matricula;
     }
 }

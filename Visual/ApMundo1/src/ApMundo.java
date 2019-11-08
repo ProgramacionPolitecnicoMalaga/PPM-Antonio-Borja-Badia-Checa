@@ -75,17 +75,16 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
 
         }
       //  System.out.println(archivo);
-        comboPaises.addActionListener(new ActionListener() {
+        /*comboPaises.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
             }
-        });
+        });*/
 
         mostrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
 
                 String paisSeleccionado= (String) comboPaises.getSelectedItem();
                 System.out.println(paisSeleccionado);
@@ -141,10 +140,11 @@ txtAeropuertos.append(aero.toString());
         JFrame frame = new JFrame("Aeropuertos del Mundo");
         frame.setContentPane(new ApMundo().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+    //    frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 //        System.out.println(archivo.getAbsolutePath());
+        frame.setSize(500, 250);
 
     }
 }
