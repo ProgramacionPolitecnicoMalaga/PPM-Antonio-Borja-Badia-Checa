@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ApMundo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2042">
-              <caret line="16" column="31" selection-end-line="145" />
+            <state relative-caret-position="-120">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#824#843#0" expanded="true" />
@@ -29,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Aeropuertos.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -87,8 +87,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ApMundo.form" />
-        <option value="$PROJECT_DIR$/src/ApMundo.java" />
         <option value="$PROJECT_DIR$/src/Aeropuertos.java" />
+        <option value="$PROJECT_DIR$/src/ApMundo.java" />
       </list>
     </option>
   </component>
@@ -191,7 +191,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4220963" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4220963" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -236,19 +236,6 @@
     <entry file="file://$PROJECT_DIR$/src/ApMundo.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ApMundo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2042">
-          <caret line="16" column="31" selection-end-line="145" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#824#843#0" expanded="true" />
-            <element signature="e#2740#2748#0" expanded="true" />
-            <element signature="e#3030#3038#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Aeropuertos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -259,6 +246,19 @@
             <element signature="e#529#530#0" expanded="true" />
             <element signature="e#556#557#0" expanded="true" />
             <element signature="e#624#625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApMundo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#824#843#0" expanded="true" />
+            <element signature="e#2740#2748#0" expanded="true" />
+            <element signature="e#3030#3038#0" expanded="true" />
           </folding>
         </state>
       </provider>

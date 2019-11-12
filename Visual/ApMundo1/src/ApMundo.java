@@ -19,7 +19,6 @@ public class ApMundo {
     private JButton mostrarButton;
     private JTextArea txtAeropuertos;
     private JScrollPane panelAeropuertos;
-    public File xmlAeropuertos;
     public static String xmlRuta;
     public static File archivo;
     public ArrayList<String> paises = new ArrayList<>();
