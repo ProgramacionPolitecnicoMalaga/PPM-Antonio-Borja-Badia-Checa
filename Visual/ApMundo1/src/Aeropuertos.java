@@ -2,10 +2,10 @@ public class Aeropuertos {
 
 
     private String nomAeropuerto;
-private String area;
-private  String matricula;
+    private String area;
+    private String matricula;
 
-    public Aeropuertos( String nomAeropuerto, String area, String matricula) {
+    public Aeropuertos(String nomAeropuerto, String area, String matricula) {
         this.nomAeropuerto = nomAeropuerto;
         this.area = area;
         this.matricula = matricula;
