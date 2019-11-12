@@ -3,14 +3,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import  java.util.ArrayList;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import  java.util.*;
+import java.util.*;
+
 public class ApMundo {
     private JPanel panelMain;
     private JPanel panelPaises;
@@ -22,7 +23,7 @@ public class ApMundo {
     public static String xmlRuta;
     public static File archivo;
     public ArrayList<String> paises = new ArrayList<>();
-public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayList >();
+    public HashMap<String, ArrayList> infoAeropuertos = new HashMap<String, ArrayList>();
 
  /*  public listModel = new DefaultListModel<>();
 
@@ -33,8 +34,7 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
         list.setVisibleRowCount(-1);*/
 
 
-
-    public  ApMundo() {
+    public ApMundo() {
 
         try {
             getXmlRuta(xmlRuta);
@@ -46,7 +46,7 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
             System.out.println("Raíz del documento xml" + doc.getDocumentElement().getNodeName());
             NodeList nodes = doc.getElementsByTagName("aeropuerto");
             System.out.println("==========================");
-//            System.out.println("Nº Aeropuertos: " + nodes.getLength());
+
             for (int i = 0; i < nodes.getLength(); i++) {
                 Node node = nodes.item(i);
 
@@ -73,7 +73,7 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
             ex.printStackTrace();
 
         }
-      //  System.out.println(archivo);
+        //  System.out.println(archivo);
         /*comboPaises.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,33 +85,32 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String paisSeleccionado= (String) comboPaises.getSelectedItem();
+                String paisSeleccionado = (String) comboPaises.getSelectedItem();
                 System.out.println(paisSeleccionado);
 
-                ArrayList aeropuertosPorPaises =infoAeropuertos.get(paisSeleccionado);
+                ArrayList aeropuertosPorPaises = infoAeropuertos.get(paisSeleccionado);
                 txtAeropuertos.setText(paisSeleccionado);
 
-                for ( Object aero: aeropuertosPorPaises  ) {
-                   aero=(Aeropuertos)aero;
+                for (Object aero : aeropuertosPorPaises) {
+                    aero = (Aeropuertos) aero;
 
-txtAeropuertos.append(System.getProperty("line.separator"));
-txtAeropuertos.append(aero.toString());
+                    txtAeropuertos.append(System.getProperty("line.separator"));
+                    txtAeropuertos.append(aero.toString());
                 }
             }
         });
     }
-    private  void CargarDatos(){
-                Set <String>hashSet = new HashSet<String>(paises);//quitamos los países repetidos del array, ya que se añaden una vez por cada aeropuerto
-                paises.clear();
-                paises.addAll(hashSet);
 
-        for ( Object o: paises ){
+    private void CargarDatos() {
+        Set<String> hashSet = new HashSet<String>(paises);//quitamos los países repetidos del array, ya que se añaden una vez por cada aeropuerto
+        paises.clear();
+        paises.addAll(hashSet);
+
+        for (Object o : paises) {
             comboPaises.addItem(o);
 
         }
     }
-
-
 
 
     public static String getValue(String etiqueta, Element element) {
@@ -122,8 +121,8 @@ txtAeropuertos.append(aero.toString());
 
     public String getXmlRuta(String nombreArchivo) {
 
-        archivo= new File("aeropuertos.xml");
-         xmlRuta = archivo.getAbsolutePath();
+        archivo = new File("aeropuertos.xml");
+        xmlRuta = archivo.getAbsolutePath();
 
         return xmlRuta;
     }
@@ -133,7 +132,7 @@ txtAeropuertos.append(aero.toString());
         JFrame frame = new JFrame("Aeropuertos del Mundo");
         frame.setContentPane(new ApMundo().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //    frame.pack();
+        //    frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 //        System.out.println(archivo.getAbsolutePath());
