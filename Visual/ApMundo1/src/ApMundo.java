@@ -37,13 +37,12 @@ public HashMap<String, ArrayList >  infoAeropuertos = new HashMap<String,ArrayLi
     public  ApMundo() {
 
         try {
-            archivo = new File("aeropuertos.xml");
-            xmlRuta = archivo.getAbsolutePath();
+            getXmlRuta(xmlRuta);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(archivo);
             doc.getDocumentElement().normalize();
-
+            System.out.println(xmlRuta);
             System.out.println("Raíz del documento xml" + doc.getDocumentElement().getNodeName());
             NodeList nodes = doc.getElementsByTagName("aeropuerto");
             System.out.println("==========================");
@@ -112,13 +111,6 @@ txtAeropuertos.append(aero.toString());
         }
     }
 
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ApMundo apMundo = (ApMundo) o;
-        return Objects.equals(paises, apMundo.paises);
-    }*/
 
 
 
@@ -130,8 +122,9 @@ txtAeropuertos.append(aero.toString());
 
     public String getXmlRuta(String nombreArchivo) {
 
-        archivo = new File(nombreArchivo);
-        String xmlRuta = archivo.getAbsolutePath();
+        archivo= new File("aeropuertos.xml");
+         xmlRuta = archivo.getAbsolutePath();
+
         return xmlRuta;
     }
 
