@@ -2,10 +2,10 @@ import java.io.File;
 
 public class RankingPilotos {
 
-public File archivo;
+    public static File archivo;
 public String rutaArchivo;
 
-    public String getXmlRuta(String rutaArchivo) {
+    public static  String getRutaArchivo(String rutaArchivo) {
 
         archivo = new File("pilotos.csv");
         rutaArchivo = archivo.getAbsolutePath();
@@ -16,9 +16,12 @@ public String rutaArchivo;
 
 
     public static void main(String[] args) {
+RankingPilotos rankingPilotos = new RankingPilotos();
 
-
+        getRutaArchivo();
     }
+
+
 
 
 }
