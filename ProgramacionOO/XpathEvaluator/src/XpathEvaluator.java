@@ -19,7 +19,7 @@ public class XpathEvaluator {
     public XpathEvaluator(String nombreFichero){
         String dir = System.getProperty("user.dir");
         try {
-            File inputFile = new File(dir + File.separator + "listaCanciones.xml");
+            File inputFile = new File(dir + File.separator + "songlist.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = dbFactory.newDocumentBuilder();
             doc = docBuilder.parse(inputFile);
