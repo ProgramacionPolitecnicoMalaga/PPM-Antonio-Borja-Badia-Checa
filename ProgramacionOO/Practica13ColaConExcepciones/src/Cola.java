@@ -61,8 +61,8 @@ public void meterElementoEnCola(int nuevoElemento){
 
         if(colaVacia()){
 
-            head=-1;
-            tail=-1;
+            head=0;
+            tail=0;
         } else if (!colaLlena()) {
 
             tail++;

@@ -38,7 +38,7 @@ public class ControladorCola {
             System.out.println(e.advertenciaException());
 
         }
-        
+
     }
 
 }

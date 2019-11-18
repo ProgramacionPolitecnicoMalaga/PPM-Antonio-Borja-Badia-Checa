@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ListaCanciones>
+  <Cancion Titulo="Adventure" file="adventure.mp3"/>
+  <Cancion Titulo="Better days" file="betterdays.mp3"/>
+  <Cancion Titulo="Buel dot Sessions - Slow Rollout" file="Blue_Dot_Sessions_-_Slow_Rollout.mp3"/>
+  <Cancion Titulo="Buddy" file="buddy.mp3"/>
+</ListaCanciones>
