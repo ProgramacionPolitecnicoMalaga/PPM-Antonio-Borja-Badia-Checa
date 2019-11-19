@@ -57,10 +57,11 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8557e" class="javax.swing.JTextArea" binding="txtAeropuertos">
+          <component id="4a531" class="org.openstreetmap.gui.jmapviewer.JMapViewer" binding="JMapViewer">
             <constraints/>
             <properties>
-              <editable value="false"/>
+              <mapPolygonsVisible value="false"/>
+              <mapRectanglesVisible value="false"/>
             </properties>
           </component>
         </children>

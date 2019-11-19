@@ -17,8 +17,9 @@ public class ApMundoMapa {
     private JPanel panelPaises;
     private JComboBox comboPaises;
     private JButton mostrarButton;
-    private JTextArea txtAeropuertos;
+   // private JTextArea txtAeropuertos;
     private JScrollPane panelAeropuertos;
+    private org.openstreetmap.gui.jmapviewer.JMapViewer JMapViewer;
     public static String xmlRuta;
     public static File archivo;
     public ArrayList<String> paises = new ArrayList<>();
@@ -53,8 +54,8 @@ public class ApMundoMapa {
                     Element element = (Element) node;
                     String pais = element.getAttribute("pais");
                     System.out.println("País: " + pais);
-                    System.out.println("Nombre del Aeropuerto: " + element.getAttribute("nombreLargo"));
-                    Aeropuertos paisesYaeropuertos = new Aeropuertos(element.getAttribute("nombreLargo"), element.getAttribute("area"), element.getAttribute("matricula"));
+                    System.out.println("Nombre del Aeropuerto: " + element.getAttribute("nombreLargo")+ element.getAttribute("area")+element.getAttribute("matricula")+ element.getAttribute("lon") +element.getAttribute("lat"));
+                    Aeropuertos paisesYaeropuertos = new Aeropuertos(element.getAttribute("nombreLargo"), element.getAttribute("area"), element.getAttribute("matricula"), element.getAttribute("lon"), element.getAttribute("lat"));
                     paises.add(pais);
                     if (infoAeropuertos.containsKey(pais)) {
                         infoAeropuertos.get(pais).add(paisesYaeropuertos);
@@ -88,13 +89,13 @@ public class ApMundoMapa {
                 System.out.println(paisSeleccionado);
 
                 ArrayList aeropuertosPorPaises = infoAeropuertos.get(paisSeleccionado);
-                txtAeropuertos.setText(paisSeleccionado);
+             //   txtAeropuertos.setText(paisSeleccionado);
 
                 for (Object aero : aeropuertosPorPaises) {
                     aero = (Aeropuertos) aero;
 
-                    txtAeropuertos.append(System.getProperty("line.separator"));
-                    txtAeropuertos.append(aero.toString());
+                 //   txtAeropuertos.append(System.getProperty("line.separator"));
+                  //  txtAeropuertos.append(aero.toString());
                 }
             }
         });
