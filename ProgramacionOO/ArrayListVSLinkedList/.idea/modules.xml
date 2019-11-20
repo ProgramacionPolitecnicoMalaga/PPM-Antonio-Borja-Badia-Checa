@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ArrayListVSLinkedList.iml" filepath="$PROJECT_DIR$/.idea/ArrayListVSLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArrayListVSLinkedList.iml" filepath="$PROJECT_DIR$/ArrayListVSLinkedList.iml" />
     </modules>
   </component>
 </project>
