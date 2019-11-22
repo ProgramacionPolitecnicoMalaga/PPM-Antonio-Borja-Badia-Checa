@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.function.IntFunction;
 
 public class Paquete extends ArrayList implements Prestable  {
     String codigo, titulo, annoPublicacion, disponibilidad ;
@@ -54,23 +53,13 @@ public class Paquete extends ArrayList implements Prestable  {
     }
 
 
-    @Override
-    public String toString() {
-        return "Paquete{" +
-                "codigo='" + codigo + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", annoPublicacion='" + annoPublicacion + '\'' +
-                ", disponibilidad='" + disponibilidad + '\'' +
-                ", prestado=" + prestado +
-                '}';
-    }
 
     @Override
     public void prestar() {
-if (prestado==false){
-    prestado=true;
-    disponibilidad="No está disponible";
-}
+        if (prestado==false){
+            prestado=true;
+            disponibilidad="No está disponible";
+        }
 
     }
 
@@ -85,11 +74,20 @@ if (prestado==false){
     @Override
     public String estaPrestado() {
 
-return disponibilidad;
+        return disponibilidad;
     }
 
     @Override
-    public Object[] toArray(IntFunction generator) {
-        return new Object[0];
+    public String toString() {
+        return "{" +
+                "codigo='" + codigo + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", annoPublicacion='" + annoPublicacion + '\'' +
+                ", disponibilidad='" + disponibilidad + '\'' +
+                ", prestado=" + prestado +
+                '}';
     }
+
+
+
 }

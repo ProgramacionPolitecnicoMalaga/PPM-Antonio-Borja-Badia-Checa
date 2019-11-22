@@ -8,4 +8,10 @@ int numEjemplar;
         this.numEjemplar=numEjemplar;
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString()+"[numEjemplar= " + numEjemplar +
+                ']'+"\n"+"\n";
+    }
 }
