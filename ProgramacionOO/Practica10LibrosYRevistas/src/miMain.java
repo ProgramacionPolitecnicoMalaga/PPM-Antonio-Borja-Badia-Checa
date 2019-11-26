@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class miMain {
-
+Paquete paquete = new Paquete();
     public static void visualizarPrestados(ArrayList<Paquete> paquete1) {
         for (int i=0; i<paquete1.size();i++){
 

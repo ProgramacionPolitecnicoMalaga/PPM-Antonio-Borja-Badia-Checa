@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Paquete extends ArrayList implements Prestable  {
-    String codigo, titulo, annoPublicacion, disponibilidad ;
-    boolean prestado=false;
+ static    String codigo, titulo, annoPublicacion, disponibilidad ;
+   static boolean prestado=false;
 
     public Paquete(String codigo, String titulo, String annoPublicacion, String disponibilidad, boolean prestado) {
         this.codigo = codigo;
@@ -11,6 +12,8 @@ public class Paquete extends ArrayList implements Prestable  {
         this.disponibilidad=disponibilidad;
         this.prestado = prestado;
     }
+
+    public Paquete (){}
 
     public String getDisponibilidad() {
         return disponibilidad;
@@ -58,17 +61,18 @@ public class Paquete extends ArrayList implements Prestable  {
     public void prestar() {
         if (prestado==false){
             prestado=true;
-            disponibilidad="No está disponible";
+            setDisponibilidad("No está disponible");
         }
 
     }
 
-    @Override
-    public void devolver() {
 
-        prestado=false;
-
-        disponibilidad="Está disponible";
+@Override
+    public  void devolver(Collection<Paquete> paquete) {
+        paquete=(ArrayList)paquete;
+    for (Paquete p: paquete)
+    prestado=false;
+    setDisponibilidad("Está disponible");
     }
 
     @Override
