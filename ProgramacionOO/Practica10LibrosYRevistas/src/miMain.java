@@ -2,6 +2,8 @@ import java.util.*;
 
 public class miMain {
 Paquete paquete = new Paquete();
+
+
     public static void visualizarPrestados(ArrayList<Paquete> paquete1) {
         for (int i=0; i<paquete1.size();i++){
 
@@ -34,10 +36,10 @@ Paquete paquete = new Paquete();
     }
 
     public static void main(String[] args) {
-
+        Paquete paquete = new Paquete();
         ArrayList<Paquete> paquete1 = new ArrayList<Paquete>();
 
-        paquete1.add(new Libro("345345", "Juego de tronos", "1990", "",false));
+        paquete1.add(new Libro("345345", "Juego de tronos", "1990", "getDisponibilidad",false));
         paquete1.add(new Libro("23345","Tormenta de Espadas", "1995", "", false ));
         paquete1.add(new Libro("2sdf244","Festín de Cuervos", "2000", "", false ));
         paquete1.add(new Libro("237635sef","Choque de Reyes", "2005", "", false ));
@@ -49,7 +51,7 @@ Paquete paquete = new Paquete();
 
         visualizarPrestados(paquete1);
         visualizarNoprestados(paquete1);
-
+        System.out.println(paquete.getDisponibilidad(paquete1));
 
         ArrayList<Paquete> paquete2 = new ArrayList<Paquete>();
 
@@ -60,6 +62,9 @@ Paquete paquete = new Paquete();
     imprimirPublicacionesPorPaquetes(paquete2);
     visualizarNoprestados(paquete2);
     visualizarPrestados(paquete2);
+
+        System.out.println(paquete.isPrestado());
+
     }
 
 

@@ -11,16 +11,22 @@ public class Paquete extends ArrayList implements Prestable  {
         this.annoPublicacion = annoPublicacion;
         this.disponibilidad=disponibilidad;
         this.prestado = prestado;
+        ArrayList paquete = new ArrayList();
+
     }
 
     public Paquete (){}
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getDisponibilidad(ArrayList<Paquete> paquete2) {
+        //return disponibilidad;
+        if (prestado) return "No está disponible";
+        else return "Está disponible";
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public boolean setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
+        System.out.println("this.disponibilidad = " + this.disponibilidad);
+        return false;
     }
 
     public String getCodigo() {
@@ -69,6 +75,7 @@ public class Paquete extends ArrayList implements Prestable  {
 
 @Override
     public  void devolver(Collection<Paquete> paquete) {
+        System.out.println("DEVOLVER");
         paquete=(ArrayList)paquete;
     for (Paquete p: paquete)
     prestado=false;

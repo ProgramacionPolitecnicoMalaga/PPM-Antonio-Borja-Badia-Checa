@@ -10,6 +10,14 @@ int numEjemplar;
     }
 
     @Override
+    public boolean isPrestado() {
+        if (prestado){
+            return setDisponibilidad("No diponible.");
+        }
+         return setDisponibilidad("Está disponible.");
+    }
+
+    @Override
     public String toString() {
         return super.toString()+"[numEjemplar= " + numEjemplar +
                 ']'+"\n"+"\n";
