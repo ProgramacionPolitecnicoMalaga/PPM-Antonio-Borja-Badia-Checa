@@ -1,63 +1,66 @@
 import javax.swing.*;
 import java.util.*;
-import java.util.Map;
-import java.util.TreeMap;
+
 
 public class Empleados {
 
 
-    JTextField DNI;
-    JTextField nombre;
-    JTextField apellido;
+    String DNI;
+    String nombre;
+    String apellido;
     String categoria;
 
-    public Empleados(JTextField DNI, JTextField nombre, JTextField apellido, String categoria) {
+    public Empleados(String DNI, String nombre, String apellido, String categoria) {
         this.DNI = DNI;
         this.nombre = nombre;
         this.apellido = apellido;
         this.categoria = categoria;
-
-        Map<String,String> empleados = new TreeMap<String, String>();
     }
 
-    public JTextField getDNI() {
+    public void annadirEmpleado(Empleados nuevoEmpleado){
+
+
+
+    }
+
+    public String getDNI() {
         return DNI;
     }
 
-    public void setDNI(JTextField DNI) {
+    public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
-    public JTextField getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(JTextField nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public JTextField getApellido() {
+    public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(JTextField apellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-
+   /*
     public String getCategoria() {
         return categoria;
-    }
+    }*/
 
-    public void setCategoria(String categoria) {
+   /* public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
+    }*/
 
     @Override
     public String toString() {
         return "Empleados{" +
-                "DNI=" + DNI +
-                ", nombre=" + nombre +
-                ", apellido=" + apellido +
+                "DNI='" + DNI + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
                 ", categoria='" + categoria + '\'' +
                 '}';
     }

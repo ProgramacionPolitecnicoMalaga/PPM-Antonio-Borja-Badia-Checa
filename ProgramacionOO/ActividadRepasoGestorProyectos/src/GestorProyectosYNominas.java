@@ -2,38 +2,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-import java.util.Map;
 
 public class GestorProyectosYNominas {
-    private JPanel panelMain;
-    private JPanel jPanelRegistrarTrabajador;
-    private JTextField textNombreTrabajador;
-    private JTextField textApellidoTrabajador;
-    private JComboBox comboCategoriaEmpleado;
-    private JButton buttRegistraEmpleado;
-    private JTextField textDNIEmpleado;
+    public JPanel panelMain;
 
-
-    public GestorProyectosYNominas() {
-        buttRegistraEmpleado.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Empleados empleados = new Empleados(textNombreTrabajador,textApellidoTrabajador,textDNIEmpleado,"");
-
-                Iterator it = ;
-
-             while (it.hasNext()){
-Map.Entry entry=(Map.Entry)it.next();
-                 System.out.println(entry.getKey()+", "+entry.getValue());
-             }
-
-            }
-        });
-    }
 
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Aeropuertos del Mundo");
+        JFrame frame = new JFrame("Gestor de proyectos y Nóminas");
         frame.setContentPane(new GestorProyectosYNominas().panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //    frame.pack();
@@ -42,8 +18,17 @@ Map.Entry entry=(Map.Entry)it.next();
 //        System.out.println(archivo.getAbsolutePath());
         frame.setSize(500, 250);
 
+        TreeMap<String, Empleados> empleadosTreeMap = new TreeMap<String, Empleados>();
+empleadosTreeMap.put("2486661S", new Empleados("2486661S","Empleadio1", "Apellido1", "Técnico"));
+empleadosTreeMap.put("4685451T", new Empleados("4685451T","Empleadio2", "Apellido2", "Administrador"));
+empleadosTreeMap.put("0854547Y", new Empleados("0854547Y","Empleadio3", "Apellido3", "Programador"));
+empleadosTreeMap.put("248766K", new Empleados("248766K","Empleadio4", "Apellido4", "J.Proyecto"));
+empleadosTreeMap.put("5488669O", new Empleados("5488669O","Empleadio5", "Apellido5", "J.Operaciones"));
 
+        for (Empleados empl : empleadosTreeMap.values()   ) {
+            System.out.println(empl.toString());
 
+        }
 
     }
 
