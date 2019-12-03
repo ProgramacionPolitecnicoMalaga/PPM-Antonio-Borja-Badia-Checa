@@ -29,6 +29,11 @@ empleadosTreeMap.put("5488669O", new Empleados("5488669O","Empleadio5", "Apellid
             System.out.println(empl.toString());
 
         }
+    Nominas nominas= new Nominas();
+
+      nominas.elegirCategoria(empleadosTreeMap.get("248766K").categoria);
+      nominas.elegirCategoria(empleadosTreeMap.get("2486661S").categoria);
+
 
     }
 

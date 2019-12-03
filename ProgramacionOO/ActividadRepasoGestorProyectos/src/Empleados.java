@@ -18,10 +18,9 @@ public class Empleados {
     }
 
     public void annadirEmpleado(Empleados nuevoEmpleado){
-
-
-
     }
+
+    public Empleados(){}
 
     public String getDNI() {
         return DNI;
@@ -64,4 +63,7 @@ public class Empleados {
                 ", categoria='" + categoria + '\'' +
                 '}';
     }
+
+
+
 }

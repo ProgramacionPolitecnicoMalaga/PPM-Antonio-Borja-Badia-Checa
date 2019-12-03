@@ -8,10 +8,31 @@ import java.util.Set;
 
 
 public class GestorXML {
-
-
     public static String xmlRuta;
     public static File archivo;
+
+    public class crearXML{
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    /* private void CargarDatos() {
        Set<String> hashSet = new HashSet<String>(paises);//quitamos los países repetidos del array, ya que se añaden una vez por cada aeropuerto
