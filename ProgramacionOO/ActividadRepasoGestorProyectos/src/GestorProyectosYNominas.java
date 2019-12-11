@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.*;
 
 public class GestorProyectosYNominas {
@@ -18,21 +16,44 @@ public class GestorProyectosYNominas {
 //        System.out.println(archivo.getAbsolutePath());
         frame.setSize(500, 250);
 
-        TreeMap<String, Empleados> empleadosTreeMap = new TreeMap<String, Empleados>();
-empleadosTreeMap.put("2486661S", new Empleados("2486661S","Empleadio1", "Apellido1", "Técnico"));
-empleadosTreeMap.put("4685451T", new Empleados("4685451T","Empleadio2", "Apellido2", "Administrador"));
-empleadosTreeMap.put("0854547Y", new Empleados("0854547Y","Empleadio3", "Apellido3", "Programador"));
-empleadosTreeMap.put("248766K", new Empleados("248766K","Empleadio4", "Apellido4", "J.Proyecto"));
-empleadosTreeMap.put("5488669O", new Empleados("5488669O","Empleadio5", "Apellido5", "J.Operaciones"));
+        Empleados emp1 = new Empleados("Empleado1", "Apellido1", "268751P", "Tecnico", 900);
+        Empleados emp2 = new Empleados("nombre2", "Apellidos2","dni2","Tecnico", 900);
+        Proyecto pro1 = new Proyecto(2.2,"Emple1", "Informatica","Proyecto mediano");
+        Actividad act1 = new Actividad(15, pro1,"esta es la descripcion de la actividad");
+        Actividad act2 = new Actividad(12, pro1,"esta es la descripcion de la segunda actividad");
+        GestorXML gen1 = new GestorXML();
+        ArrayList<Empleados> listaempleadosEmpresa = new ArrayList<>();
 
-        for (Empleados empl : empleadosTreeMap.values()   ) {
-            System.out.println(empl.toString());
+        listaempleadosEmpresa.add(emp1);
+        listaempleadosEmpresa.add(emp2);
 
-        }
-    Nominas nominas= new Nominas();
+        emp1.añadirActividadRealizada(act1);
+        emp1.añadirActividadRealizada(act2);
+        emp1.añadirActividadRealizada(act1);
 
-      nominas.elegirCategoria(empleadosTreeMap.get("248766K").categoria);
-      nominas.elegirCategoria(empleadosTreeMap.get("2486661S").categoria);
+        emp2.añadirActividadRealizada(act2);
+        emp2.añadirActividadRealizada(act1);
+        emp2.añadirActividadRealizada(act2);
+
+        emp1.MostrarActividadesRealizadas();
+        emp2.MostrarActividadesRealizadas();
+
+        System.out.println(emp1.getProductividad());
+        System.out.println(emp2.getProductividad());
+
+        emp1.calcularProductividad();
+        emp2.calcularProductividad();
+
+        System.out.println(emp1.getProductividad());
+        System.out.println(emp2.getProductividad());
+
+        System.out.println("======================");
+
+        gen1.CrearXMLAtividadesEmpleado(emp1);
+        gen1.crearXMLActividadesDeProyecto(pro1,listaempleadosEmpresa);
+        gen1.crearXMLNominaEmpleado(listaempleadosEmpresa);
+
+
 
 
     }

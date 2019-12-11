@@ -1,9 +1,12 @@
 public class Proyecto {
-    double factorProductividad,horas;
+    double factorProductividad;
+    String nombre, departamento, descripcion;
 
-    public Proyecto(double factorProductividad, double horas) {
+    public Proyecto(double factorProductividad, String nombre, String departamento, String descripcion) {
         this.factorProductividad = factorProductividad;
-        this.horas = horas;
+        this.nombre = nombre;
+        this.departamento = departamento;
+        this.descripcion = descripcion;
     }
 
     public double getFactorProductividad() {
@@ -14,13 +17,27 @@ public class Proyecto {
         this.factorProductividad = factorProductividad;
     }
 
-    public double getHoras() {
-        return horas;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setHoras(double horas) {
-        this.horas = horas;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
+    public String getDepartamento() {
+        return departamento;
+    }
 
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }
