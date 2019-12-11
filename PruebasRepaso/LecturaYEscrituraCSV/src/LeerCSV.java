@@ -3,39 +3,43 @@ import java.util.Arrays;
 
 
 public class LeerCSV {
-    BufferedReader bufferedReader=null;
+    static File archivoCSV = new File("nuevo.csv");
+    BufferedReader  lector=null;
+    public final String SEPARADOR=";";
+    String lineaActual;
 
-    public void leerCSV()  {
-         final String SEPARADOR=";";
-        String lineaActual;
+    public void lectorCSV(){
+        String [] campos;
 
         try {
-            bufferedReader = new BufferedReader(new FileReader("nuevo.csv"));
-            bufferedReader.readLine();
-            while ((lineaActual=bufferedReader.readLine()) !=null) {
-String [] campos = lineaActual.split(SEPARADOR);
-                System.out.println(Arrays.toString(campos));
-                System.out.println(campos[1]);
+            lector= new BufferedReader(new FileReader(archivoCSV.getAbsolutePath()));
+            while ((lineaActual=lector.readLine())!=null){
+                campos=lineaActual.split(SEPARADOR);
+
+                for (int i=0;i<campos.length;i++){
+
+                    System.out.println(campos[i]);
+                }
+
 
             }
 
 
-        } catch (FileNotFoundException e)  {
+
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-
         } finally {
-            if (null!=bufferedReader) {
-                try {
-                    bufferedReader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            try {
+                lector.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
 
+
+    }
     }
 
 

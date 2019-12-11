@@ -2,8 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.*;
-import java.util.Arrays;
-import java.util.Arrays;
+
 
 public class LecturaCSV {
 
@@ -34,6 +33,12 @@ public void lectorCSV(){
         e.printStackTrace();
     } catch (IOException e) {
         e.printStackTrace();
+    }finally {
+        try {
+            lector.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
