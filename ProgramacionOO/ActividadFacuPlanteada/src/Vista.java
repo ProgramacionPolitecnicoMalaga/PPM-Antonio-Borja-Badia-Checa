@@ -80,4 +80,6 @@ public class Vista {
         System.out.print("Elige el número de tarea a completar: ");
         return lectorTeclado.nextInt();
     }
+
+
 }

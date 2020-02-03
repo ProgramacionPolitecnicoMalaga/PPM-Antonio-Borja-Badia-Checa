@@ -35,8 +35,7 @@ public class Main {
                 case Vista.CREAR_TAREA:
                     String nombreTarea = vista.pedirNombreTarea();
                     LocalDate fecha = vista.pedirFechaTarea();
-                    int posCategoria = vista.pedirCategoria(gestorDeTareas.listaCategorias);
-                    Categoria categoria = gestorDeTareas.listaCategorias.get(posCategoria);
+                    Categoria categoria = pedirCategoria(gestorDeTareas);
                     gestorDeTareas.añadirTarea(new Tarea(nombreTarea,fecha,categoria));
                     break;
                 case Vista.CONSULTAR_TAREAS:
@@ -45,6 +44,11 @@ public class Main {
                 case Vista.ELIMINAR_TAREA:
                     int posTarea = vista.pedirPosicionTareaACompletar(gestorDeTareas.tareasPendientes());
                     gestorDeTareas.tareasPendientes().get(posTarea).completarTarea();
+                break;
+                case Vista.CONSULTAR_TAREAS_CATEGORIA:
+                    int posCategoria= vista.pedirCategoria(gestorDeTareas.listaCategorias.get(posCategoria));
+                     gestorDeTareas.tareasDeUnaCategoria(new Categoria("Programacion");
+
 
             }
         }
@@ -72,5 +76,10 @@ public class Main {
 
         // Consultar las tareas retrasadas.
         System.out.println("9- " + gestorDeTareas.tareasRetrasadas() + "\n");*/
+    }
+
+    public static Categoria pedirCategoria(GestorDeTareas gestorDeTareas) {
+        int posCategoria = vista.pedirCategoria(gestorDeTareas.listaCategorias);
+        return gestorDeTareas.listaCategorias.get(posCategoria);
     }
 }
