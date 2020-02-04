@@ -5,18 +5,15 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String dni;
-    private String cuentaBancaria;
+    private double cuentaBancaria;
 
-    public Cliente(String nombre, String apellido, String dni, String cuentaBancaria) {
+    public Cliente(String nombre, String apellido, String dni, double cuentaBancaria) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.cuentaBancaria = cuentaBancaria;
     }
 
-    public Cliente() {
-
-    }
 
     @Override
     public String toString() {
@@ -25,7 +22,7 @@ public class Cliente {
                 ", Apellido='" + apellido + '\'' +
                 ", DNI='" + dni + '\'' +
                 ", Cuenta Bancaria='" + cuentaBancaria + '\'' +
-                '}';
+                '}'+"\n";
     }
 
     public String getNombre() {
@@ -52,11 +49,11 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public String getCuentaBancaria() {
+    public double getCuentaBancaria() {
         return cuentaBancaria;
     }
 
-    public void setCuentaBancaria(String cuentaBancaria) {
+    public void setCuentaBancaria(double cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
     }
 

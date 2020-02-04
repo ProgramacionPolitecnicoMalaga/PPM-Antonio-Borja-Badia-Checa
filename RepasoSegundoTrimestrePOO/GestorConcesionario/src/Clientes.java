@@ -1,20 +1,39 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Clientes {
-Cliente cliente = new Cliente();
+ArrayList <Cliente> clienteArrayList=new ArrayList<>();
 
-ArrayList <Cliente> clienteArrayList;
 
-    public Clientes(Cliente cliente, ArrayList<Cliente> clienteArrayList) {
-        this.cliente = cliente;
-        this.clienteArrayList = clienteArrayList;
-    }
 
     public ArrayList<Cliente> getClienteArrayList() {
         return clienteArrayList;
     }
 
-    public void setClienteArrayList(ArrayList<Cliente> clienteArrayList) {
-        this.clienteArrayList = clienteArrayList;
-    }
+   public Cliente annadirCliente (Cliente nuevoCliente){
+       Cliente nombreCliente;
+
+        System.out.println("El cliente se ha añadido\n");
+        clienteArrayList.add(nuevoCliente);
+nombreCliente=nuevoCliente;
+return nombreCliente;
+   }
+   public void listarClientesNombres(){
+       for (Cliente c: clienteArrayList) {
+           System.out.println(c.getNombre());
+       }
+   }
+
+   public void listarClientesInformacionCompleta(){
+        Cliente cliente;
+       Iterator it=clienteArrayList.iterator();
+       while(it.hasNext()){
+           cliente = (Cliente)it.next();
+           System.out.println(cliente);
+       }
+
+
+   }
+
+
 }

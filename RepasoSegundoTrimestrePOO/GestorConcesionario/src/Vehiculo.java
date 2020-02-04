@@ -85,9 +85,9 @@ public class Vehiculo {
                 ", Color='" + color + '\'' +
                 ", Año Fabricacion='" + annoFabricacion + '\'' +
                 ", Estado='" + estado + '\'' +
-                ", Precio=" + precio +
+                ", Precio Venta=" + precio +
                 ", Nº Bastidor='" + numBastidor + '\'' +
-                '}';
+                '}'+"\n";
     }
 
     @Override
