@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Contrato {
 
     Vehiculo vehiculo;
@@ -12,6 +14,21 @@ public class Contrato {
         this.precioAcordado = precioAcordado;
     }
 
+    public String getTipoContrato() {
+        return tipoContrato;
+    }
+
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+
+    public double getPrecioAcordado() {
+        return precioAcordado;
+    }
+
+    public void setPrecioAcordado(double precioAcordado) {
+        this.precioAcordado = precioAcordado;
+    }
 
     @Override
     public String toString() {
@@ -22,4 +39,15 @@ public class Contrato {
                 ", Precio Acordado=" + precioAcordado +
                 '}'+"\n";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Contrato c=(Contrato) o;
+        return c.getTipoContrato().equalsIgnoreCase(this.getTipoContrato());
+    }
+
+
+
+
+
 }

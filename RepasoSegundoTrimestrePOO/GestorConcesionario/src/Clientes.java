@@ -24,6 +24,13 @@ return nombreCliente;
        }
    }
 
+   public void listarClientesByDNI(){
+        for (Cliente c:clienteArrayList){
+            System.out.println(c.getDni());
+        }
+   }
+
+
    public void listarClientesInformacionCompleta(){
         Cliente cliente;
        Iterator it=clienteArrayList.iterator();

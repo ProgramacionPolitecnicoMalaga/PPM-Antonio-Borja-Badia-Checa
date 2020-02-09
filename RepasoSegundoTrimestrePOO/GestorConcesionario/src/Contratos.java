@@ -21,4 +21,36 @@ public class Contratos {
         }
 }
 
+public double ContratoCompraVenta(Contrato contrato){
+        double contratoTotal=0;
+     if (contrato.getTipoContrato().equalsIgnoreCase("Compra")){
+        cambiarSigno(contrato.getPrecioAcordado());
+         System.out.println(contratoTotal-=(contrato.getPrecioAcordado()));
+     } else if(contrato.getTipoContrato().equalsIgnoreCase("Venta")){
+         System.out.println(contratoTotal=(contrato.getPrecioAcordado()));
+     }
+return contratoTotal;
+}
+
+    private void cambiarSigno(double precioAcordado) {
+
+
+    }
+
+    public double balanceTotal(String dni){
+
+       Clientes clientes;
+        double balanceTotal=0;
+
+   for(int i=0; i<contratoArrayList.size();i++){
+       if(contratoArrayList.get(i).clien){
+
+
+       }
+
+
+    }
+
+}
+
 }

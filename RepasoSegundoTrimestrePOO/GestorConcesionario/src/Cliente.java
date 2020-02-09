@@ -64,5 +64,8 @@ return cliente.getDni().equalsIgnoreCase(this.getDni());
 
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni);
+    }
 }

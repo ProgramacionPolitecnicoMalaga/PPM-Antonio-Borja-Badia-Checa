@@ -33,7 +33,9 @@ vehiculos.listarVehiculosInformacionCompleta();
 Contrato contrato2 = new Contrato(modelo2,cliente2,"Compra",9000 );
         contratos.annadirContrato(contrato2);
         contratos.listarContratos();
+//Restamos o sumamos el saldo a la cuenta corriente del cliente, dependiendo si es una venta o una compra
 
+        contratos.ContratoCompraVenta(cliente1.);
 
     }
 }
