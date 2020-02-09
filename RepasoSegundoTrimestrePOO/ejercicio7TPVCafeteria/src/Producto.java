@@ -35,8 +35,8 @@ public class Producto {
 
     @Override
     public boolean equals(Object o) {
-       Producto producto=(Producto) o;
-       return producto.getNombreProducto().equalsIgnoreCase(getNombreProducto());
+        Producto producto=(Producto) o;
+        return producto.getNombreProducto().equalsIgnoreCase(getNombreProducto());
     }
 
 
