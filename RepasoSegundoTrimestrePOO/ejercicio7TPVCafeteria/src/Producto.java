@@ -4,9 +4,13 @@ public class Producto {
     private String nombreProducto;
     private  double precioProducto;
 
+
     public Producto(String nombreProducto, double precioProducto) {
         this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
+    }
+
+    public Producto() {
     }
 
     public String getNombreProducto() {

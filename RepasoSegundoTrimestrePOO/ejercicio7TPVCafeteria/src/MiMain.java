@@ -5,7 +5,9 @@ public class MiMain {
         Productos productos = new Productos();
         Producto producto;
         Mesas mesas = new Mesas();
-
+        Factura factura;
+        InterfazTPV interfazTPV = new InterfazTPV();
+        Mesa mesa = new Mesa();
         //añadir productos
         productos.annadirProducto("Ración de jamón", 8.00);
         //añadimos mesas
@@ -15,16 +17,14 @@ public class MiMain {
         mesas.annadirMesa("M3", false);
         mesas.annadirMesa("M4", true);
 
-        //listamos productos
+      /*  //listamos productos
         productos.listarProductos();
         //listamos mesas
         mesas.listarMesas();
         //listamos mesas abiertas
         mesas.mostrarMesasAbiertas();
         //listamos mesas cerradas
-        mesas.mostrarMesasCerradas();
-
-
+        mesas.mostrarMesasCerradas();*/
 
     }
 }

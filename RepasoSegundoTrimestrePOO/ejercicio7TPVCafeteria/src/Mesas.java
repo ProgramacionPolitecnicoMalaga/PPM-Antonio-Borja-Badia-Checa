@@ -9,6 +9,9 @@ public class Mesas {
         System.out.println("Mesa añadida");
     }
 
+    public Mesas() {
+    }
+
     public void listarMesas(){
         for (Mesa m:mesaArrayList) {
             System.out.println(m);
