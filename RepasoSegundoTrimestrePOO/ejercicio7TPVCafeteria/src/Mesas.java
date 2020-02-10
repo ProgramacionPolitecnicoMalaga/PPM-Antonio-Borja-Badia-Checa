@@ -12,17 +12,16 @@ public class Mesas {
     public Mesas() {
     }
 
-    public void listarMesas(){
+    public void listarMesas(Mesas mesas){
         for (Mesa m:mesaArrayList) {
             System.out.println(m);
         }
     }
 
-    public void mostrarMesasAbiertas() {
+    public void mostrarMesasAbiertas(Mesas mesas) {
 
         System.out.print("Mesas abiertas: ");
         for (Mesa m: mesaArrayList) {
-
             if(m.isMesaAbierta()){
                 System.out.print("["+m.getCodigoMesa()+"] ");
             }
@@ -31,7 +30,7 @@ public class Mesas {
         System.out.println();
 
     }
-    public void mostrarMesasCerradas(){
+    public void mostrarMesasCerradas(Mesas mesas){
         System.out.print("Mesas cerradas: ");
         for (Mesa m: mesaArrayList){
             if(!m.isMesaAbierta()){
@@ -43,4 +42,14 @@ public class Mesas {
 
     }
 
+    public Mesa elegirMesaAFacturar (String codMesa){
+        Mesa mesaElegida = new Mesa();
+        for (Mesa m: mesaArrayList) {
+            if(m.getCodigoMesa().equalsIgnoreCase(codMesa)){
+
+                mesaElegida=m;
+            }
+        }
+        return mesaElegida;
+    }
 }

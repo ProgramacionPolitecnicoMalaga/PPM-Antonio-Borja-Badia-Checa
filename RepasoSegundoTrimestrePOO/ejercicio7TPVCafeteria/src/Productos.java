@@ -5,6 +5,13 @@ public class Productos {
 
     private ArrayList<Producto> productoArrayList = new ArrayList<>();
 
+    public Productos(ArrayList<Producto> productoArrayList) {
+        this.productoArrayList = productoArrayList;
+    }
+
+    public Productos() {
+    }
+
     public void  annadirProducto(String nombreProducto, double precioProducto){
 
         productoArrayList.add(new Producto(nombreProducto, precioProducto));

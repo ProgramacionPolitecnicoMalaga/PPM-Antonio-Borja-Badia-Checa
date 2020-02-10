@@ -5,7 +5,6 @@ public class MiMain {
         Productos productos = new Productos();
         Producto producto;
         Mesas mesas = new Mesas();
-        Factura factura;
         InterfazTPV interfazTPV = new InterfazTPV();
         Mesa mesa = new Mesa();
         //añadir productos
@@ -25,6 +24,7 @@ public class MiMain {
         mesas.mostrarMesasAbiertas();
         //listamos mesas cerradas
         mesas.mostrarMesasCerradas();*/
+interfazTPV.crearFactura(mesas);
 
     }
 }

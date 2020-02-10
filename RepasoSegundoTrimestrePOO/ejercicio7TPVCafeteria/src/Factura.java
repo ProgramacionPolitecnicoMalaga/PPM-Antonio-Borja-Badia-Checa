@@ -1,4 +1,4 @@
-import java.util.TreeMap;
+/*import java.util.TreeMap;
 
 public class Factura {
 
@@ -7,13 +7,15 @@ public class Factura {
     Producto producto;
     Productos productos;
 
-    public TreeMap facturaMesa (Mesas mesaAFacturar, Productos productosAFacturar){
+    public TreeMap facturaMesa (Mesa mesaAFacturar, Productos productosAFacturar){
 
-        this.mesas=mesaAFacturar;
+        this.mesa=mesaAFacturar;
         this.productos=productosAFacturar;
 
-        TreeMap<Mesas, Productos> facturaTreemap = new TreeMap<>();
-facturaTreemap.put(mesaAFacturar=new Mesas(), productosAFacturar=new Productos());
+        TreeMap<Mesa, Productos> facturaTreemap = new TreeMap<>();
+facturaTreemap.put(mesaAFacturar=new Mesa(), productosAFacturar=new Productos());
 return facturaTreemap;
     }
-}
+
+
+}*/

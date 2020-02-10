@@ -3,6 +3,13 @@ import java.util.Objects;
 public class Mesa {
     private String codigoMesa;
     private boolean mesaAbierta;
+    private Productos listaProductos;
+
+    public Mesa(String codigoMesa, boolean mesaAbierta, Productos listaProductos) {
+        this.codigoMesa = codigoMesa;
+        this.mesaAbierta = mesaAbierta;
+        this.listaProductos = listaProductos;
+    }
 
     public Mesa(String codigoMesa, boolean mesaAbierta) {
         this.codigoMesa = codigoMesa;
