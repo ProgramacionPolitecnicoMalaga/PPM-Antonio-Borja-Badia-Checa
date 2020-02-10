@@ -28,5 +28,17 @@ public class Productos {
         }
     }
 
+    public int crearFactura(){
+        int totalFactura=0;
+
+        Iterator it=productoArrayList.iterator();
+        while (it.hasNext()){
+            Producto  producto=(Producto)it.next();
+            totalFactura+=producto.getPrecioProducto();
+        }
+        return totalFactura;
+
+    }
+
 
 }
