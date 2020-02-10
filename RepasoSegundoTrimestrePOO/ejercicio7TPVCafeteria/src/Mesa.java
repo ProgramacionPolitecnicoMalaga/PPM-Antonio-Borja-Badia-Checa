@@ -5,16 +5,13 @@ public class Mesa {
     private String codigoMesa;
     private boolean mesaAbierta;
     private Productos listaProductos;
-ArrayList<Productos> productosArrayList = new ArrayList<>();
-    public Mesa(String codigoMesa, boolean mesaAbierta, Productos listaProductos) {
-        this.codigoMesa = codigoMesa;
-        this.mesaAbierta = mesaAbierta;
-        this.listaProductos = listaProductos;
-    }
+
+
 
     public Mesa(String codigoMesa, boolean mesaAbierta) {
         this.codigoMesa = codigoMesa;
         this.mesaAbierta = mesaAbierta;
+        this.listaProductos=new Productos();
     }
 
     public Mesa() {
@@ -45,7 +42,9 @@ ArrayList<Productos> productosArrayList = new ArrayList<>();
     }
 
 
-
+    public Productos getListaProductos() {
+        return listaProductos;
+    }
 
     @Override
     public boolean equals(Object o) {

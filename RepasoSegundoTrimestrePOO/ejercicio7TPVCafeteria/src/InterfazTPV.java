@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class InterfazTPV {
     Scanner src = new Scanner(System.in);
-    public InterfazTPV() {
-    }
+
 
     public String crearFactura (Mesas mesas) {
         int opcion;
@@ -42,6 +41,7 @@ public class InterfazTPV {
 
     public void menuGestionarMesa(Mesas mesas) {
 int opcion;
+
 String codMesa, nomProducto, annadirOtroProducto;
 double precioProducto;
 
@@ -56,7 +56,8 @@ System.out.println("1-Realizar pedido");
             mesas.mostrarMesasAbiertas(mesas);
             System.out.println("Introduce el código de una mesa disponible: ");
             codMesa=src.next();
-            mesas.elegirMesaAFacturar(codMesa);
+            Mesa mesa = mesas.elegirMesaAFacturar(codMesa);
+
             do {
                 System.out.println("Indique un producto: ");
                 nomProducto = src.next();
@@ -64,8 +65,7 @@ System.out.println("1-Realizar pedido");
                 precioProducto = src.nextDouble();
                 System.out.println("¿Desea añadir otro producto?");
                 annadirOtroProducto=src.next();
-
-                Producto producto = new Producto(nomProducto, precioProducto);
+mesa.getListaProductos().annadirProducto(nomProducto,precioProducto);
 
 
             }while ( annadirOtroProducto.equalsIgnoreCase("SI"));
