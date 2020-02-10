@@ -1,10 +1,11 @@
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Mesa {
     private String codigoMesa;
     private boolean mesaAbierta;
     private Productos listaProductos;
-
+ArrayList<Productos> productosArrayList = new ArrayList<>();
     public Mesa(String codigoMesa, boolean mesaAbierta, Productos listaProductos) {
         this.codigoMesa = codigoMesa;
         this.mesaAbierta = mesaAbierta;
@@ -42,6 +43,9 @@ public class Mesa {
                 ", Mesa abierta=" + mesaAbierta +
                 '}';
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {

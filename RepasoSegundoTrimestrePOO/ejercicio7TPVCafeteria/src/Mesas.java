@@ -2,15 +2,14 @@ import java.util.ArrayList;
 
 public class Mesas {
 
-    private ArrayList<Mesa> mesaArrayList = new ArrayList<>();
+    public ArrayList<Mesa> mesaArrayList = new ArrayList<>();
 
     public void annadirMesa (String codigoMesa, boolean mesaAbierta){
         mesaArrayList.add(new Mesa(codigoMesa,mesaAbierta));
         System.out.println("Mesa añadida");
     }
 
-    public Mesas() {
-    }
+
 
     public void listarMesas(Mesas mesas){
         for (Mesa m:mesaArrayList) {

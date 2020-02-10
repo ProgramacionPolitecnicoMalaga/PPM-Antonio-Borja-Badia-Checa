@@ -29,7 +29,7 @@ public class InterfazTPV {
                     mesas.mostrarMesasCerradas(mesas);
                     break;
                 case 4:
-                        menuGestionarMesa();
+                        menuGestionarMesa(mesas);
                     break;
                 case 9:
                     System.out.println(mensaje = "Adiós");
@@ -40,11 +40,12 @@ public class InterfazTPV {
             return mensaje;
         }
 
-    private void menuGestionarMesa() {
+    public void menuGestionarMesa(Mesas mesas) {
 int opcion;
-String codMesa;
-Mesas mesas = new Mesas();
-        System.out.println("1-Realizar pedido");
+String codMesa, nomProducto, annadirOtroProducto;
+double precioProducto;
+
+System.out.println("1-Realizar pedido");
 
         System.out.println("2-Pagar cuenta");
 
@@ -55,9 +56,25 @@ Mesas mesas = new Mesas();
             mesas.mostrarMesasAbiertas(mesas);
             System.out.println("Introduce el código de una mesa disponible: ");
             codMesa=src.next();
-    mesas.elegirMesaAFacturar(codMesa);
+            mesas.elegirMesaAFacturar(codMesa);
+            do {
+                System.out.println("Indique un producto: ");
+                nomProducto = src.next();
+                System.out.println("Indique el precio del producto: ");
+                precioProducto = src.nextDouble();
+                System.out.println("¿Desea añadir otro producto?");
+                annadirOtroProducto=src.next();
 
-        } else {
+                Producto producto = new Producto(nomProducto, precioProducto);
+
+
+            }while ( annadirOtroProducto.equalsIgnoreCase("SI"));
+
+
+
+        }
+
+        else {
 
             //pagarCuenta();
         }
