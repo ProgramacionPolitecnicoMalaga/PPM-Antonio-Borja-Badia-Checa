@@ -15,7 +15,7 @@ public class Productos {
     public void  annadirProducto(String nombreProducto, double precioProducto){
 
         productoArrayList.add(new Producto(nombreProducto, precioProducto));
-        System.out.println("Producto añadido");
+        System.out.println("Producto añadido\n");
     }
 
     public void listarProductos(){

@@ -13,7 +13,7 @@ public class Mesas {
 
     public void listarMesas(Mesas mesas){
         for (Mesa m:mesaArrayList) {
-            System.out.println(m);
+            System.out.println(m+"\n");
         }
     }
 
@@ -51,4 +51,15 @@ public class Mesas {
         }
         return mesaElegida;
     }
+
+
+    /*public void abrirMesa(String codMesa){
+        Mesa mesaElegida= new Mesa();
+        for (Mesa m:mesaArrayList) {
+            if(m.getCodigoMesa().equalsIgnoreCase(codMesa))
+                mesaElegida=m;
+            m.setMesaAbierta(true);
+        }
+        System.out.println("La mesa"+mesaElegida+"ahora está abierta.");
+    }*/
 }

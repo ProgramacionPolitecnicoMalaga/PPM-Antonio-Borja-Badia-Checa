@@ -8,7 +8,7 @@ public class MiMain {
         InterfazTPV interfazTPV = new InterfazTPV();
         Mesa mesa = new Mesa();
         //añadir productos
-        productos.annadirProducto("Ración de jamón", 8.00);
+       // productos.annadirProducto("Ración de jamón", 8.00);
         //añadimos mesas
         mesas.annadirMesa("M12", false);
         mesas.annadirMesa("M1", true);

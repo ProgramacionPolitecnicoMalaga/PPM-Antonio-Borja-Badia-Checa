@@ -33,7 +33,7 @@ public class Producto {
         return "Producto{" +
                 "Nombre del producto='" + nombreProducto + '\'' +
                 ", Precio=" + precioProducto +"€"+
-                '}';
+                '}'+"\n";
     }
 
     @Override

@@ -1,14 +1,13 @@
 import java.util.Scanner;
 
 public class InterfazTPV {
-    Scanner src = new Scanner(System.in);
+    Scanner src = new Scanner(System.in).useDelimiter("\n");
     int recuentoCaja=0;
 
-    public String crearFactura (Mesas mesas) {
+    public void  crearFactura (Mesas mesas) {
         int opcion;
-        String mensaje = "Error not found TPV";
+        System.out.println("------¡Bien venido al menú!------\n");
         do {
-            System.out.println("------¡Bien venido al menú!------\n");
             System.out.println("¿Qué opción desea realizar?\n" +
                     "1-Listar todas las mesas\n" +
                     "2-Listar mesas abiertas\n" +
@@ -32,15 +31,15 @@ public class InterfazTPV {
                     menuGestionarMesa(mesas);
                     break;
                 case 5:
-                    System.out.println("El recuento de la caja hasta ahora es de: "+recuentoCaja);
+                    System.out.println("El recuento de la caja hasta ahora es de: "+recuentoCaja+"€\n");
                     break;
                 case 6:
-                    System.out.println(mensaje = "Adiós");
+                    System.out.println("Hasta la próxima!!");
                     break;
             }
 
         } while (opcion!=6);
-        return mensaje;
+
     }
 
     public void menuGestionarMesa(Mesas mesas) {
@@ -48,7 +47,7 @@ public class InterfazTPV {
 
         String codMesa, nomProducto, annadirOtroProducto;
         double precioProducto;
-
+        System.out.println("------Elije una opción------ \n");
         System.out.println("1-Realizar pedido");
 
         System.out.println("2-Pagar cuenta");
@@ -56,7 +55,6 @@ public class InterfazTPV {
         opcion=src.nextInt();
 
         if(opcion==1){
-            // realizarPedio();
             mesas.mostrarMesasAbiertas(mesas);
             System.out.println("Introduce el código de una mesa disponible: ");
             codMesa=src.next();
@@ -67,7 +65,7 @@ public class InterfazTPV {
                 nomProducto = src.next();
                 System.out.println("Indique el precio del producto: ");
                 precioProducto = src.nextDouble();
-                System.out.println("¿Desea añadir otro producto?");
+                System.out.println("¿Desea añadir otro producto? (Si/No)");
                 annadirOtroProducto=src.next();
                 mesa.getListaProductos().annadirProducto(nomProducto,precioProducto);
 
@@ -84,7 +82,7 @@ public class InterfazTPV {
             Mesa mesa = mesas.elegirMesaAFacturar(codMesa);
             int totalMesa= mesa.getListaProductos().crearFactura();
             this.recuentoCaja+=totalMesa;
-            System.out.println("La factura para esta mesa es: "+totalMesa);
+            System.out.println("La factura para esta mesa es: "+totalMesa+"€\n");
             mesa.setMesaAbierta(false);
         }
     }
