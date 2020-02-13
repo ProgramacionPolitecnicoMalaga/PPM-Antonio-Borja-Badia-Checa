@@ -1,2 +1,2 @@
-# Practicas Programacion Borja
+# Practicas Programación Borja
 Practicas subidas por A. Borja Badía Checa
