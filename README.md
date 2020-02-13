@@ -1,2 +1,2 @@
-# Practicas Programacion 1er TrimestreBorja
+# Practicas Programacion Borja
 Practicas subidas por A. Borja Badía Checa
