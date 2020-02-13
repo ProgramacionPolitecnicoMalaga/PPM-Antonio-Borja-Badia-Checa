@@ -44,14 +44,10 @@ public class InterfazTPV {
 
     public void menuGestionarMesa(Mesas mesas) {
         int opcion;
-
-        String codMesa, nomProducto, annadirOtroProducto;
-        double precioProducto;
+        String codMesa;
         System.out.println("------Elije una opción------ \n");
-        System.out.println("1-Realizar pedido");
-
-        System.out.println("2-Pagar cuenta");
-
+        System.out.println("1-Realizar pedido\n");
+        System.out.println("2-Pagar cuenta\n");
         opcion=src.nextInt();
 
         if(opcion==1){
@@ -59,20 +55,11 @@ public class InterfazTPV {
             System.out.println("Introduce el código de una mesa disponible: ");
             codMesa=src.next();
             Mesa mesa = mesas.elegirMesaAFacturar(codMesa);
-
-            do {
-                System.out.println("Indique un producto: ");
-                nomProducto = src.next();
-                System.out.println("Indique el precio del producto: ");
-                precioProducto = src.nextDouble();
-                System.out.println("¿Desea añadir otro producto? (Si/No)");
-                annadirOtroProducto=src.next();
-                mesa.getListaProductos().annadirProducto(nomProducto,precioProducto);
-
-
-            }while ( annadirOtroProducto.equalsIgnoreCase("SI"));
+            Productos productos= new Productos();
+            String nomProducto = "", annadirOtroProducto = "";
+            double precioProducto = 0;
+            productos.annadirProductosAmesa(nomProducto,precioProducto, annadirOtroProducto);
             System.out.println(codMesa);
-            mesa.getListaProductos().listarProductos();
 
         }
         else {
