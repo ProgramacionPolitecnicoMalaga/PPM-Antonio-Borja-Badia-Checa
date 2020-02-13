@@ -54,7 +54,7 @@ public class InterfazTPV {
             mesas.mostrarMesasAbiertas(mesas);
             System.out.println("Introduce el código de una mesa disponible: ");
             codMesa=src.next();
-            Mesa mesa = mesas.elegirMesaAFacturar(codMesa);
+             mesas.elegirMesaAFacturar(codMesa);
             Productos productos= new Productos();
             String nomProducto = "", annadirOtroProducto = "";
             double precioProducto = 0;
