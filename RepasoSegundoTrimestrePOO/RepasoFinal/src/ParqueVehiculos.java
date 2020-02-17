@@ -4,7 +4,7 @@ public class ParqueVehiculos {
 
     private ArrayList<StockVehiculo> stockVehiculos;
 
- 
+
 
     public ParqueVehiculos(ArrayList<StockVehiculo> stockVehiculos) {
         this.stockVehiculos = stockVehiculos;
