@@ -4,10 +4,7 @@ public class ParqueVehiculos {
 
     private ArrayList<StockVehiculo> stockVehiculos;
 
-  public ParqueVehiculos(){
-      stockVehiculos= new ArrayList<>();
-
-  }
+ 
 
     public ParqueVehiculos(ArrayList<StockVehiculo> stockVehiculos) {
         this.stockVehiculos = stockVehiculos;
@@ -26,7 +23,9 @@ return null;
 
     public void actualizarUnidades (Venta venta){
 
-
+Vehiculo vehiculo= venta.getVehiculo();
+StockVehiculo stockVehiculo = getStockVehiculoByMarcayModelo(vehiculo.getMarca(),vehiculo.getModelo());
+stockVehiculo.sacarDeStock(venta.getUnidades());
 
     }
 

@@ -52,10 +52,10 @@ public class VehiculosXMLReader {
 private Vehiculo getVehiculo(Element elementoVehiculo){
       String marca= elementoVehiculo.getAttribute("marca");
       String modelo= elementoVehiculo.getAttribute("modelo");
-      int kilomtros = Integer.parseInt(elementoVehiculo.getAttribute("kilometros"));
+      int kilometros = Integer.parseInt(elementoVehiculo.getAttribute("kilometros"));
       String combustible = elementoVehiculo.getAttribute("combustible");
       double precio = Double.parseDouble(elementoVehiculo.getAttribute("precio"));
-return new Vehiculo(marca,modelo,combustible,kilomtros,precio);
+return new Vehiculo(marca,modelo,combustible,kilometros,precio);
 
     }
 

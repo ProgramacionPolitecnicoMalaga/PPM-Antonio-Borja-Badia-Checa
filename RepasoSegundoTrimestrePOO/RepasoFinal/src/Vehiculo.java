@@ -12,6 +12,26 @@ public class Vehiculo {
         this.precio = precio;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getCombustible() {
+        return combustible;
+    }
+
+    public int getKilometros() {
+        return kilometros;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
     @Override
     public String toString() {
         return "Vehiculo{" +

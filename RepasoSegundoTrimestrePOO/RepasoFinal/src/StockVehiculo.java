@@ -16,7 +16,7 @@ public class StockVehiculo {
     }
 
     public String getMarca(){
-        return vehiculo.g;
+return vehiculo.getMarca();
     }
 
     public String getModelo(){
@@ -32,8 +32,8 @@ public class StockVehiculo {
     @Override
     public String toString() {
         return "StockVehiculo{" +
-                "unidades=" + unidades +
-                ", vehiculo=" + vehiculo +
-                '}';
+                "Unidades=" + unidades +
+                ", Vehiculo=" + vehiculo +
+                '}'+"\n";
     }
 }
