@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Clientes>
+   <cliente Nombre="cliente1" Apellido="apellido1" DNI="26874545S" FechNacimiento="07/02/1958"  Lat="-36.9396" Long="47.0412"/>
+    <cliente Nombre="cliente2" Apellido="apellido2" DNI="3434335A" FechNacimiento="14/09/1975"  Lat="-36.9396" Long="47.0412"/>
+    <cliente Nombre="cliente3" Apellido="apellido3" DNI="3454545P" FechNacimiento="04/06/1984"  Lat="63.9400" Long="-116.2118"/>
+    <cliente Nombre="cliente4" Apellido="apellido4" DNI="2681468D" FechNacimiento="15/10/1992" Lat="78.5035" Long="92.5471"/>
+    <cliente Nombre="cliente5" Apellido="apellido5" DNI="2671783T"  FechNacimiento="04/04/1957" Lat="-9.9406" Long="-149.0917"/>
+</Clientes>

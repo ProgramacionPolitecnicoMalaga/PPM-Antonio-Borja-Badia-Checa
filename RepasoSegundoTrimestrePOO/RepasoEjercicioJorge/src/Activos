@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Activos>
+<Activo Direccion="direccion1" NumHabitaciones="03" mCuadrados="65" Lat="30.0108" Long="-6.2152" Ascensor="No" Estado="Para Reformar" Finalidad="Venta" Precio="25000"/>
+    <Activo Direccion="direccion2" NumHabitaciones="02" mCuadrados="70" Lat="-42.0046" Long="-179.8756" Ascensor="Si" Estado="Reformado" Finalidad="Alquiler" Precio="30000"/>
+<Activo Direccion="direccion3" NumHabitaciones="04" mCuadrados="85" Lat="38.9172" Long="-19.0347" Ascensor="No" Estado="Habitable" Finalidad="Venta" Precio="100000"/>
+<Activo Direccion="direccion4" NumHabitaciones="01" mCuadrados="45" Lat="51.5529" Long="-29.3629" Ascensor="Si" Estado="Para Reformar" Finalidad="Alquiler" Precio="22500"/>
+<Activo Direccion="direccion5" NumHabitaciones="06" mCuadrados="260" Lat="-73.4098" Long="-35.5379" Ascensor="No" Estado="Reformado" Finalidad="Venta" Precio="15000"/>
+<Activo Direccion="direccion6" NumHabitaciones="288" mCuadrados="288" Lat="-55.4551" Long="-129.2756" Ascensor="Si" Estado="Habitable" Finalidad="Alquiler" Precio="288"/>
+</Activos>

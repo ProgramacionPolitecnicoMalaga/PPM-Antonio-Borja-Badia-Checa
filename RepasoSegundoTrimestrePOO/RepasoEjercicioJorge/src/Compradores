@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Compradores>
+    <Comprador Nombre="cliente1" Apellido="apellido1" DNI="2628545R" FechNacimiento="07/02/1958"  Lat="-30.9396" Long="44.0412" Cuotas="250" NumCuotas="56" Activo="Si"/>
+    <Comprador Nombre="cliente2" Apellido="apellido2" DNI="3434335D" FechNacimiento="14/09/1975"  Lat="-16.0276" Long="69.1298" Cuotas="500" NumCuotas="35" Activo="Si"/>
+    <Comprador Nombre="cliente3" Apellido="apellido3" DNI="3454545O" FechNacimiento="04/06/1984"  Lat="68.3944" Long="-26.0254" Cuotas="120" NumCuotas="90" Activo="No"/>
+</Compradores>
